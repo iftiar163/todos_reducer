@@ -51,10 +51,15 @@ const Todos = () => {
   };
 
   const handleDataFilter = async (type) => {
-    const response = await axios.get(
-      `http://localhost:7070/todos?type=${type}`
-    );
-    dispatch({ type: "Filter_Todos", payload: response.data });
+    if (type === "*") {
+      const response = await axios.get(`http://localhost:7070/todos`);
+      dispatch({ type: "Filter_Todos", payload: response.data });
+    } else {
+      const response = await axios.get(
+        `http://localhost:7070/todos?type=${type}`
+      );
+      dispatch({ type: "Filter_Todos", payload: response.data });
+    }
   };
 
   const handleInputValue = (e) => {
@@ -109,6 +114,12 @@ const Todos = () => {
                 </div>
               </div>
               <div className="filter-button my-3">
+                <button
+                  className="btn btn-sm btn-primary"
+                  onClick={() => handleDataFilter("*")}
+                >
+                  All
+                </button>
                 <button
                   className="btn btn-sm btn-info"
                   onClick={() => handleDataFilter("Pending")}
