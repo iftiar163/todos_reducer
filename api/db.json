@@ -1,0 +1,31 @@
+{
+  "todos": [
+    {
+      "0": {
+        "title": "",
+        "type": "Pending"
+      },
+      "title": "Law Firm Website",
+      "type": "Pending",
+      "id": 1
+    },
+    {
+      "0": {
+        "title": "",
+        "type": "Pending"
+      },
+      "title": "Law Firm Website",
+      "type": "In Progress",
+      "id": 2
+    },
+    {
+      "0": {
+        "title": "",
+        "type": "Pending"
+      },
+      "title": "Law Firm Website",
+      "type": "Completed",
+      "id": 3
+    }
+  ]
+}
